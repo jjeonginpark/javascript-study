@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>Example</title>
+    <script type="text/javascript">
+
+
+        /*
+        * 1. 다음 코드의 결과를 예상하시오
+        *    var연산자는 변수를 로컬 스코프에 저장한다.
+        */
+        function test(){
+            myMessage =' hi';
+            //var myMessage =' hi';
+        }
+        test();
+        console.log(myMessage);
+
+        /*
+        * 2. 다음 코드의 결과를 예상하시오
+        *    변수를 정의할 때 해당 변수가 객체를 가리키게 할 생삭이라면 해당변수는 null로 초기화
+        */
+        var car = null;
+        console.log(typeof car);
+
+        /*
+        * 3. 다음 변수 test2 를 숫자로 변환하기오
+        *    Number()     어떤 데이터 타입에든
+        *    parseInt(,10)   정수 형태의 문자열을 숫자로,두번째 매개변수는 진법
+        *    parseFloat()    문자열을 10진수 기준으로 파싱
+        */
+        var test2 = true;
+
+
+        /*
+         * 4. for ~in문 을 사용하여 아래 객체의 프로퍼티를 output 변수에 넣어주세요
+         */
+        var output ='속성\t값\n';
+        var student = {
+            이름:'김난이',
+            국어 :92,
+            영어:80
+        }
+        for(var key in student){
+            output += key +'\t'+ student[key] + '\n';
+        }
+        console.log(output);
+
+
+        /*
+         * 5. 다음 코드의 결과를 예상하시오(break 와 continue 각가 실행 됐을 때 결과예측)
+         *    breake문은 즉시 루프를 빠져나가 루프 다음 문장을 실행
+         *    continue문은 루프를 즉시 빠져나가긴 하지만 루프실행은 계속한다.
+         */
+        var num = 0;
+        for(var i =1;i<10;i++){
+            if(i%5 ==0){
+                //break;
+                continue;
+            }
+            num++;
+        }
+        console.log(num);
+
+
+        /*
+         * 6. 다음 주석처리된 결과 같이 나오도록 중간 코드를 완성하시오
+         */
+
+        function doAdd(num1,num2){
+            //매개변수가 하나일때 해당값만 리턴
+            if(arguments.length==1){
+                //return num1;
+                return arguments[0];
+            }else if(arguments.length==2){
+                //매개변수가 두개일때 두 값을 더해서 리턴
+                //return num1+num2;
+                return arguments[0]+arguments[1];
+            }
+        }
+        console.log(doAdd(10));
+        console.log(doAdd(10,20));//30
+
+    </script>
+</head>
+<body>
+</body>
+</html>
