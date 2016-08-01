@@ -6,30 +6,50 @@
 
 
         /*
-         * 1. 다음 코드의 결과를 예상하시오
-         *    var연산자는 변수를 로컬 스코프에 저장한다.
+         * 1. 다음 코드의 결과를 경우(var 키워드 유무)에 따라 예상하시오,
          */
         function test(){
-            myMessage =' hi';
-            //var myMessage =' hi';
+            myMessage =' hi';     //경우1
+            //var myMessage =' hi'; //경우2
         }
         test();
         console.log(myMessage);
 
+        //경우1: hi
+        //경우2: not defined
+        //var연산자는 변수를 로컬 스코프에 저장한다.
+
+
+
+
         /*
          * 2. 다음 코드의 결과를 예상하시오
-         *    변수를 정의할 때 해당 변수가 객체를 가리키게 할 생삭이라면 해당변수는 null로 초기화
          */
         var car = null;
         console.log(typeof car);
 
+        //object
+        // 변수를 정의할 때 해당 변수가 객체를 가리키게 할 생각이라면 해당변수는 null로 초기화
+
+
+
+
+
         /*
-         * 3. 다음 변수 test2 를 숫자로 변환하기오
-         *    Number()     어떤 데이터 타입에든
-         *    parseInt(,10)   정수 형태의 문자열을 숫자로,두번째 매개변수는 진법
-         *    parseFloat()    문자열을 10진수 기준으로 파싱
+         * 3. 다음 변수 test2 를 숫자로 변환하시오
          */
-        var test2 = true;
+        var test2 = Number(true);
+        console.log(test2); //1
+
+        /*
+        *    Number()     어떤 데이터 타입에든
+        *    parseInt(,10)   정수 형태의 문자열을 숫자로,두번째 매개변수는 진법
+        *    parseFloat()    문자열을 10진수 기준으로 파싱
+        */
+
+
+
+
 
 
         /*
@@ -47,20 +67,30 @@
         console.log(output);
 
 
+
+
+
         /*
-         * 5. 다음 코드의 결과를 예상하시오(break 와 continue 각가 실행 됐을 때 결과예측)
-         *    breake문은 즉시 루프를 빠져나가 루프 다음 문장을 실행
-         *    continue문은 루프를 즉시 빠져나가긴 하지만 루프실행은 계속한다.
+         * 5. 다음 코드의 결과를 예상하시오(break 와 continue 각각 실행 됐을 때 결과예측)
          */
         var num = 0;
         for(var i =1;i<10;i++){
             if(i%5 ==0){
-                //break;
-                continue;
+                break;
+                //continue;
             }
             num++;
         }
         console.log(num);
+
+        //continue 8
+        //break    4
+        /*
+         *    breake문은 즉시 루프를 빠져나가 루프 다음 문장을 실행
+         *    continue문은 루프를 즉시 빠져나가긴 하지만 루프실행은 계속한다.
+        */
+
+
 
 
         /*
@@ -81,6 +111,11 @@
         console.log(doAdd(10));
         console.log(doAdd(10,20));//30
 
+        //arguments 속성을 사용해도 되고, 매개변수를 사용해도 되고..
+
+
+
+
 
         /*
          * 7. 다음 코드의 결과를 예상하시오
@@ -92,9 +127,12 @@
         }
         var person = new Object();
         setName(person);
-        console.log(person.name);
-        //함수 내부에서 obj를 덮어쓰면 obj는 지역객체를 가르키는 포인트가 됩니다.
-        //이 지역객체는 함수가 실행을 마치면 즉시 파괴됩니다.
+        console.log(person.name);//nicholas
+
+        /* 함수 내부에서 obj를 덮어쓰면 obj는 지역객체를 가르키는 포인트가 됩니다.
+        이 지역객체는 함수가 실행을 마치면 즉시 파괴됩니다. */
+
+
 
 
         /*
@@ -110,20 +148,30 @@
                 color = tempColor;
             }
             swepColors();
-            //console.log(tempColor);
+            console.log(tempColor);
+            // tempColor is not defined
         }
         chargeColor();
+
         //내부 컨텍스트는 스코프체인을 통해 외분 컨텍스트 전체에 접근 할 수 있지만 외부 컨텍스트는 내부 컨텍스트에 대해 접근할 수 없다.
+
+
+
 
         /*
          * 9. 다음 주석처리된 결과 같이 나오도록 add함수를 수정하시오
          */
         function add(num1,num2){
-            var sum = num1+num2;
+            sum = num1+num2;
             return sum;
         }
         var result = add(10,20) //30
         console.log(sum) //30
+
+
+
+
+
     </script>
 </head>
 <body>
