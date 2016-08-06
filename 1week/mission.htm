@@ -15,6 +15,9 @@
         test();
         console.log(myMessage);
 
+        //경우 1 : hi
+        //경우 2 : undefined;
+
 
 
 
@@ -25,6 +28,7 @@
         var car = null;
         console.log(typeof car);
 
+        // object
 
 
 
@@ -33,7 +37,11 @@
          * 3. 다음 변수 test2 를 숫자(1)로 변환하시오
          */
         var test2 = true;
+        var test2 = Number(test2);
         console.log(test2); //1
+
+        //
+
 
 
 
@@ -51,6 +59,9 @@
         }
 
         //여기 작성
+        for( var i in student ) {
+            output += i + student[i];
+        };
 
         console.log(output);
 
@@ -98,6 +109,8 @@
                 //매개변수가 두개일때 두 값을 더해서 리턴
 
                 //여기 작성
+                var sum = num1 + num2;
+                return sum;
 
             }
         }
@@ -147,7 +160,7 @@
         }
         chargeColor();
 
-        //예상?
+        //예상? // undefined
 
 
 
@@ -161,7 +174,7 @@
          */
         function add(num1,num2){
             //함수 내부 수정
-            var sum = num1+num2;
+            sum = num1+num2;
             return sum;
         }
         var result = add(10,20);
